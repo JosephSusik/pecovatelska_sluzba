@@ -40,23 +40,55 @@ export const Results: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Vaše odpovědi:
-          </h2>
-          <div className="space-y-4">
-            {questions.map((question) => {
-              const answer = answers[question.id];
-              if (answer === undefined) return null;
-              
-              return (
-                <div key={question.id} className="border-l-4 border-blue-500 pl-4 py-2">
-                  <p className="text-gray-800">
-                    {getAnswerText(question, answer)}
-                  </p>
-                </div>
-              );
-            })}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          {/* Potřebuju pomoc */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h2 className="text-xl font-semibold text-red-700 mb-4 flex items-center">
+              <span className="text-red-500 mr-2">🔴</span>
+              Potřebuju pomoc
+            </h2>
+            <div className="space-y-3">
+              {questions.map((question) => {
+                const answer = answers[question.id];
+                if (answer === undefined || answer === false) return null;
+                
+                return (
+                  <div key={question.id} className="border-l-4 border-red-500 pl-4 py-2 bg-red-50 rounded-r">
+                    <p className="text-gray-800 text-sm">
+                      {question.yesText}
+                    </p>
+                  </div>
+                );
+              })}
+              {questions.filter(q => answers[q.id] === true).length === 0 && (
+                <p className="text-gray-500 italic">Žádné položky</p>
+              )}
+            </div>
+          </div>
+
+          {/* Zvládám */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h2 className="text-xl font-semibold text-green-700 mb-4 flex items-center">
+              <span className="text-green-500 mr-2">🟢</span>
+              Zvládám
+            </h2>
+            <div className="space-y-3">
+              {questions.map((question) => {
+                const answer = answers[question.id];
+                if (answer === undefined || answer === true) return null;
+                
+                return (
+                  <div key={question.id} className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r">
+                    <p className="text-gray-800 text-sm">
+                      {question.noText}
+                    </p>
+                  </div>
+                );
+              })}
+              {questions.filter(q => answers[q.id] === false).length === 0 && (
+                <p className="text-gray-500 italic">Žádné položky</p>
+              )}
+            </div>
           </div>
         </div>
 
@@ -65,8 +97,8 @@ export const Results: React.FC = () => {
             Kontakt
           </h2>
           <div className="space-y-3">
-            <div className="flex items-center space-x-3">
-              <div>
+            <div className="flex items-center space-x-3 w-full">
+              <div className='flex flex-col items-center w-full'>
                 <p className="font-semibold text-gray-900">Mgr. Kateřina Fabíková</p>
                 <p className="text-gray-600">Tel.: 556 778 300</p>
                 <p className="text-gray-600">E-mail: katerina.fabikova@novyjicin.cz</p>

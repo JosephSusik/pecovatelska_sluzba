@@ -19,33 +19,33 @@ const questions: Question[] = [
   },
   {
     id: 'q2',
-    text: 'Potřebujete pomoc s osobní hygienou a péčí o sebe?',
-    yesText: 'Potřebuju pomoc s osobní hygienou a péčí o sebe',
-    noText: 'Nepotřebuju pomoc s osobní hygienou a péčí o sebe'
+    text: 'Potřebujete pomoc s nákupy a drobnými pochůzkami?',
+    yesText: 'Potřebuju pomoc s nákupy a drobnými pochůzkami',
+    noText: 'Nepotřebuju pomoc s nákupy a drobnými pochůzkami'
   },
   {
     id: 'q3',
-    text: 'Potřebujete pomoc s domácími pracemi a úklidem?',
-    yesText: 'Potřebuju pomoc s domácími pracemi a úklidem',
-    noText: 'Nepotřebuju pomoc s domácími pracemi a úklidem'
+    text: 'Potřebujete pomoc s hygienou a koupáním?',
+    yesText: 'Potřebuju pomoc s hygienou a koupáním',
+    noText: 'Nepotřebuju pomoc s hygienou a koupáním'
   },
   {
     id: 'q4',
-    text: 'Potřebujete pomoc s nákupy a obstaráváním potřeb?',
-    yesText: 'Potřebuju pomoc s nákupy a obstaráváním potřeb',
-    noText: 'Nepotřebuju pomoc s nákupy a obstaráváním potřeb'
+    text: 'Potřebujete pomoc s toaletou?',
+    yesText: 'Potřebuju pomoc s toaletou',
+    noText: 'Nepotřebuju pomoc s toaletou'
   },
   {
     id: 'q5',
-    text: 'Potřebujete doprovod k lékařům a na úřady?',
-    yesText: 'Potřebuju doprovod k lékařům a na úřady',
-    noText: 'Nepotřebuju doprovod k lékařům a na úřady'
+    text: 'Potřebujete pomoc s úklidem domácnosti?',
+    yesText: 'Potřebuju pomoc s úklidem domácnosti',
+    noText: 'Nepotřebuju pomoc s úklidem domácnosti'
   },
   {
     id: 'q6',
-    text: 'Potřebujete společnost a pomoc s aktivitami?',
-    yesText: 'Potřebuju společnost a pomoc s aktivitami',
-    noText: 'Nepotřebuju společnost a pomoc s aktivitami'
+    text: 'Potřebujete pomoc s péči o nehty?',
+    yesText: 'Potřebuju pomoc s péči o nehty',
+    noText: 'Nepotřebuju pomoc s péči o nehty'
   }
 ];
 
