@@ -17,7 +17,7 @@ interface ResultsProps {
 export const Results: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   const { answers, questions } = location.state as ResultsProps || { answers: {}, questions: [] };
 
   const handleBackToQuestionnaire = () => {
@@ -27,6 +27,9 @@ export const Results: React.FC = () => {
   const getAnswerText = (question: Question, answer: boolean) => {
     return answer ? question.yesText : question.noText;
   };
+
+  // Koblih
+
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -51,7 +54,7 @@ export const Results: React.FC = () => {
               {questions.map((question) => {
                 const answer = answers[question.id];
                 if (answer === undefined || answer === false) return null;
-                
+
                 return (
                   <div key={question.id} className="border-l-4 border-red-500 pl-4 py-2 bg-red-50 rounded-r">
                     <p className="text-gray-800 text-sm">
@@ -76,7 +79,7 @@ export const Results: React.FC = () => {
               {questions.map((question) => {
                 const answer = answers[question.id];
                 if (answer === undefined || answer === true) return null;
-                
+
                 return (
                   <div key={question.id} className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 rounded-r">
                     <p className="text-gray-800 text-sm">
